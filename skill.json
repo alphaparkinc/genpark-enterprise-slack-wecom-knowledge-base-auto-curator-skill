@@ -1,0 +1,32 @@
+{
+  "name": "genpark-enterprise-slack-wecom-knowledge-base-auto-curator-skill",
+  "version": "1.0.0",
+  "description": "Enterprise Slack & WeChat Work Thread Knowledge Base Auto-Curator. Parses messy multi-turn troubleshooting conversations, extracts validated Q&A resolution pairs, removes duplicate organizational knowledge, and synthesizes structured Markdown SOP runbooks.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "curate_knowledge_sop",
+      "description": "Distill Slack/WeCom chat thread into a formal engineering SOP article.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "thread_messages": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Messages with author, timestamp, text, and is_solution_reaction."
+          },
+          "topic_context": {
+            "type": "string",
+            "description": "Subject or service name."
+          }
+        },
+        "required": [
+          "thread_messages"
+        ]
+      }
+    }
+  ]
+}
